@@ -38,7 +38,9 @@ namespace bcTools {
     uint size()   { return memberCount; }
     node<Type>* getRootPtr() { return rootNode; }
     node<Type>* getLastPtr() { return lastNode; }
-
+    
+    void sort();
+    
   private:
     void insertRootNode(Type value);
     void insertNode(Type value);

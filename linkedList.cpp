@@ -34,10 +34,18 @@ void linkedList<Type>::push_end(Type value){
 
 }
 
-//template<typename Type>
-//node<Type>* linkedList<Type>::pop_end(){
-//memberCount--;
-//}
+template<typename Type>
+node<Type>* linkedList<Type>::pop_end(){
+  auto oldLastNode = lastNode;
+  lastNode = oldLastNode->prev;
+  lastNode->next = nullptr;
+  
+  oldLastNode->next = nullptr;
+  oldLastNode->prev = nullptr;
+  
+  memberCount--;
+  return oldLastNode;
+}
 
 template<typename Type>
 void linkedList<Type>::push_begin(Type value){
@@ -197,4 +205,8 @@ node<Type>* linkedList<Type>::lookup_index(uint index) {
     }
   return target;
   }
+}
+
+void sort() {
+  //TODO: Implement sorting 
 }
